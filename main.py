@@ -32,6 +32,13 @@ class Envelope_Window:
         self.signal = None
 
     def get_filename(self):
+        """
+        Arguments:
+        No arguments
+        Function:
+        Open a dialog to get the filename of the data file. 
+        After that the method open_datafile is triggered in order to get the actual data from the file.
+        """
         ftypes = [('Excel files', '*.xls*'), ('CSV files', '*.csv')]
         self.filename = filedialog.askopenfilename(filetypes=ftypes, title='Open data files')
         self.filename_selected = Label(self.frame, text='Your file is: ./{0}'.format(self.filename.split('/')[-1]))
